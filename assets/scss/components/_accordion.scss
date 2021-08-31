@@ -91,9 +91,13 @@
   }
 }
 
-
+.accordion-open {
 /* rotate icon on header click and expand it  */
-
-
-
-/* add font-weight to the title of the open accordion */
+  & .accordion__icon {
+    transform: rotate(45deg);
+  }
+  /* add font-weight to the title of the open accordion */
+  & .accordion__title {
+    font-weight: 600;
+  }
+}

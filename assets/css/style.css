@@ -1,6 +1,31 @@
-/* <======= COMMON STYLES =======> */
-/* <========  BASE  ======> */
+/* <======= IMPORT STYLES =======> */
+/* <======== GOOGLE FONTS ======> */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+/* <========  VARIABLES CSS ======> */
+:root {
+  /* <======== Colors ======> */
+  --hue-color: 225;
+  --first-color: hsl(var(--hue-color), 48%, 35%);
+  --title-color: hsl(var(--hue-color), 48%, 22%);
+  --text-color: hsl(var(--hue-color), 12%, 35%);
+  --body-color: hsl(var(--hue-color), 48%, 98%);
+  --container-color: #fff;
+  /* <======== Font and Typography ======> */
+  --body-font: 'Poppins', sans-serif;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+}
+
+@media screen and (min-width: 968px) {
+  :root {
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
+/* <========  BASE  ======> */
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -131,8 +156,20 @@ body {
   transition: all .25s ease;
 }
 
-/* rotate icon on header click and expand it  */
-/* add font-weight to the title of the open accordion */
+.accordion-open {
+  /* rotate icon on header click and expand it  */
+  /* add font-weight to the title of the open accordion */
+}
+
+.accordion-open .accordion__icon {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.accordion-open .accordion__title {
+  font-weight: 600;
+}
+
 /* <======== LAYOUT  ======> */
 .container {
   max-width: 968px;
@@ -140,30 +177,33 @@ body {
   margin-right: 1rem;
 }
 
-/* <======== GOOGLE FONTS ======> */
-/* <========  VARIABLES CSS ======> */
-:root {
-  /* <======== Colors ======> */
-  --hue-color: 225;
-  --first-color: hsl(var(--hue-color), 48%, 35%);
-  --title-color: hsl(var(--hue-color), 48%, 22%);
-  --text-color: hsl(var(--hue-color), 12%, 35%);
-  --body-color: hsl(var(--hue-color), 48%, 98%);
-  --container-color: #fff;
-  /* <======== Font and Typography ======> */
-  --body-font: 'Poppins', sans-serif;
-  --normal-font-size: .938rem;
-  --small-font-size: .813rem;
-  --smaller-font-size: .75rem;
+/* <======== MEDIAQUERIES ======> */
+/* for medium devices */
+@media screen and (min-width: 576px) {
+  .accordion__container {
+    width: 550px;
+    padding: 2.5rem;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    border-radius: .75rem;
+  }
+  .accordion__header {
+    padding: 1.5rem;
+  }
+  .accordion__title {
+    padding-right: 3.5rem;
+  }
+  .accordion__description {
+    padding: 0 4rem 1.25rem 3.5rem;
+  }
 }
 
+/* for large devices */
 @media screen and (min-width: 968px) {
-  :root {
-    --normal-font-size: 1rem;
-    --small-font-size: .875rem;
-    --smaller-font-size: .813rem;
+  .container {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
 /* <========  ======> */
-/* <======= INDEX PAGE =======> */
